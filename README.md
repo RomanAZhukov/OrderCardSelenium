@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/ve8esnrtil54olgn/branch/main?svg=true)](https://ci.appveyor.com/project/RomanAZhukov/ordercardselenium/branch/main)
