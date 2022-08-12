@@ -34,8 +34,8 @@ public class DebitCardTest {
 
     @Test
     void shouldSendFormPopularName() {
-        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иван Иванов");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79031234567");
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Игорь Сидоров");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79265869523");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.tagName("button")).click();
 
@@ -47,8 +47,8 @@ public class DebitCardTest {
 
     @Test
     void shouldSendFormNameWithDash() {
-        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иван Иванов-Петров");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79031234567");
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Георгий Петр-Петров");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79265869523");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.tagName("button")).click();
 
@@ -60,8 +60,8 @@ public class DebitCardTest {
 
     @Test
     void shouldSendFormDoubleName() {
-        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иван Сергей Иванов");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79031234567");
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Игорь Василий Иванов");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79265869523");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.tagName("button")).click();
 
@@ -73,8 +73,8 @@ public class DebitCardTest {
 
     @Test
     void shouldSendFormTripleNameWithDash() {
-        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иван Иванов-Петров-Сидоров");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79031234567");
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Степан Орлов-Соловьев-Сидоров");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79265869523");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.tagName("button")).click();
 
@@ -84,23 +84,12 @@ public class DebitCardTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
-    void shouldSendFormNameWithYOLetter() {
-        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Алёна Иванова");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79031234567");
-        driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
-        driver.findElement(By.tagName("button")).click();
 
-        String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
-        String actual = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
-
-        Assertions.assertEquals(expected, actual);
-    }
 
     @Test
     void shouldSendFormCapsName() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("ИВАН ИВАНОВ");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79031234567");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79265869523");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.tagName("button")).click();
 
@@ -113,7 +102,7 @@ public class DebitCardTest {
     @Test
     void shouldNotValidateNameInLatin() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Ivan Ivanov");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79031234567");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79265869523");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.tagName("button")).click();
 
@@ -126,7 +115,7 @@ public class DebitCardTest {
     @Test
     void shouldNotValidateNameInCyrillicAndLatin() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Ivan Иванов");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79031234567");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79265869523");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.tagName("button")).click();
 
@@ -139,7 +128,7 @@ public class DebitCardTest {
     @Test
     void shouldNotValidateNumbersInName() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("1234567");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79031234567");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79265869523");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.tagName("button")).click();
 
@@ -152,7 +141,7 @@ public class DebitCardTest {
     @Test
     void shouldNotValidateSpecCharactersInName() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("!№ %:,.;`");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79031234567");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79265869523");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.tagName("button")).click();
 
@@ -164,8 +153,8 @@ public class DebitCardTest {
 
     @Test
     void shouldNotValidateZeroInName() {
-        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("0лег Иванов");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79031234567");
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("0лег Степанов");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79265869523");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.tagName("button")).click();
 
@@ -178,7 +167,7 @@ public class DebitCardTest {
     @Test
     void shouldNotValidateSpacesInName() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("           ");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79031234567");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79265869523");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.tagName("button")).click();
 
@@ -204,7 +193,7 @@ public class DebitCardTest {
     @Test
     void shouldNotValidatePhoneNumberWithoutPlus() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иван Иванов");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("79031234567");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("79265869523");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.tagName("button")).click();
 
@@ -278,7 +267,7 @@ public class DebitCardTest {
     @Test
     void shouldNotValidateEmptyCheckbox() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иван Иванов");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79031234567");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79265869523");
         driver.findElement(By.tagName("button")).click();
 
         String expected = "Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй";
